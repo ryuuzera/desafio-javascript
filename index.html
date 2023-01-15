@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="reset.css" />
+    <script type="text/javascript" src="consultas.js"></script>
+    <title>Desafio</title>
+    <!-- Desafio Loja de Skins
+
+  1- Criar uma lista de compras de skins de cs go onde o usuario pode filtrar os itens que deseja visualizar
+  Para acessar os dados vamos simular um consumo de api, para isso basta utilizar as funções do arquivo consultas.js
+  por exemplo, para solicitar a lista de todas as skins que estaria no banco de dados utilizar o método getAllProducts() e atribuir
+  o retorno para uma variável 
+  -->
+    <!-- 
+  
+  2 - criar um carrinho de compras onde o usuário pode inserir as skins que vai comprar
+   -->
+
+    <!-- 
+  3 - criar um botão de pagamento que retorna uma mensagem de compra efetuada e limpa o carrinho de compras -->
+    <!-- Dica: Você pode cadastrar mais skins ou alterar modificando o arquivo consultas.js e adicionar novos objetos dentro do array -->
+
+    <!--  importante: Essa maneira é apenas uma simulação pois não vamos introduzir banco de dados nesse desafio -->
+  </head>
+  <body>
+    <!-- EXEMPLO:  -->
+    <div id="items"></div>
+    <script type="text/javascript">
+      let items = document.querySelector('#items');
+      let acc;
+      getAllProducts().forEach((element) => {
+        acc =
+          (acc ? acc : '') +
+          `<div class="product" id="${element.id}">
+            <img src="${element.img}" class="img-fluid" alt=""/>
+          <p>${element.name}</p>
+          <p>${element.description}</p>
+          <p>${element.price}</p>
+          <div>
+          `;
+      });
+      items.innerHTML = acc;
+    </script>
+  </body>
+</html>
