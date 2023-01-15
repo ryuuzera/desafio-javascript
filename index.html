@@ -35,10 +35,10 @@
         acc =
           (acc ? acc : '') +
           `<div class="product" id="${element.id}">
-            <img src="${element.img}" class="img-fluid" alt=""/>
-          <p>${element.name}</p>
+            <img src="${element.img}" height="200px" class="img-fluid" alt=""/>
+          <h1>${element.name}</h1>
           <p>${element.description}</p>
-          <p>${element.price}</p>
+          <h3>R$${element.price}</h3>
           <div>
           `;
       });
